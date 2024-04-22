@@ -2,9 +2,13 @@
 
 <div class="container">
     <div id="znovu" onclick="location.reload()"></div>
-    <div class="postava" style="@Postava.Style">
+    <div class="postava" style="@Postava.Style" @onclick="Postava.Presun">
         <p class="postavaPopis">@Postava.Jmeno</p>
-        <img src="@Postava.Image" />
+        <div class="progress">
+            <div class="progress-bar" style="width:@Postava.Progress%"></div>
+        </div>
+        <img src="@Postava.Image" style="width:100%; @Postava.TransformRotateY" />
+        <p>@Postava.AktualniPozice</p>
     </div>
 
 </div>

@@ -9,6 +9,18 @@ namespace Po1300_AnimacePohyb.Pages
             base.OnInitialized();
             InicializaceHry();
         }
+
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                await Task.Run(()=> Postava.Presun());
+                StateHasChanged();
+            }
+
+            await base.OnAfterRenderAsync(firstRender);
+        }
+
         public Postava Postava { get; set; }
         private void InicializaceHry()
         {
